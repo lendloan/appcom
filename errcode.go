@@ -2,22 +2,18 @@ package appcom
 
 import (
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"os"
 )
 
 var ERR_CODE map[string]interface{}
 
 // 加载响应码和响应信息数据
-// 
+//
 // @param data 配置数据
-// 
+//
 func LoadCode(data string) {
-	err = json.Unmarshal([]byte(data), &ERR_CODE)
+	err := json.Unmarshal([]byte(data), &ERR_CODE)
 	if nil != err {
-		fmt.Println(err)
-		return
+		panic(err)
 	}
 
 	return
